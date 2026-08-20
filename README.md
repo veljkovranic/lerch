@@ -157,19 +157,6 @@ histogram, Pearson chi-square statistic, and $Q_1/Q_2$ correlation.
 - "release-assets/": compressed complete result data intended to be attached
   to a tagged GitHub release.
 
-## Prime-valued full Lerch quotients
-
-The question whether `ell_5 = 13` is the only prime-valued Lerch quotient
-requires constructing the full integer, not merely computing it modulo `p`.
-The separate PARI/GP-backed, resumable search is documented in
-"PRIME_QUOTIENT_SEARCH.md".  Its production launcher reproduces all odd-prime
-inputs through `p = 100003`, the boundary for approximately 500,000 decimal
-digits:
-
-~~~sh
-scripts/search_prime_quotients_500k.sh 64
-~~~
-
 ## References
 
 - Jonathan Sondow, "Lerch quotients, Lerch primes, Fermat-Wilson quotients,
