@@ -7,6 +7,42 @@ For research claims, treat "manifest.json" as authoritative and archive it
 with the source revision, compiler version, CPU information, and verification
 transcripts.
 
+## Why the search used irregular rounds
+
+The interval boundaries were inherited from earlier computations rather than
+chosen as equal-sized search campaigns. In Section 2.3 of
+[Sondow's paper](https://arxiv.org/pdf/1110.3113), Sondow reports that Marek
+Wolf used a Mathematica implementation of the defining congruence to find no
+additional Lerch primes in
+
+- $1{,}000{,}003\le p\le4{,}496{,}113$,
+- $18{,}816{,}869\le p\le18{,}977{,}773$, and
+- $32{,}452{,}867\le p\le32{,}602{,}373$.
+
+Sondow records that Wolf's computation took six months of CPU time on a
+64-bit 2.7 GHz AMD Opteron. Together with the earlier search below
+$1{,}000{,}003$, Wolf's work left two finite gaps in which a fifth Lerch prime
+could occur:
+
+$$
+4{,}496{,}113<p<18{,}816{,}869
+$$
+
+and
+
+$$
+18{,}977{,}773<p<32{,}452{,}867,
+$$
+
+followed by the unbounded range $p>32{,}602{,}373$. The first two production
+rounds below were designed to fill those two historical gaps. The third round
+started at $32{,}452{,}867$, deliberately overlapping Wolf's last exclusion,
+and then continued to $50{,}000{,}000$. That overlap removes dependence on an
+external boundary convention, independently rechecks part of Wolf's result,
+and gives this repository continuous retained coverage from $18{,}977{,}773$
+through $50{,}000{,}000$. Inclusive endpoints and the shared boundary at
+$32{,}452{,}867$ are intentional.
+
 | Inclusive interval | Primes | Status | Manifest aggregate SHA-256 | Purpose |
 |---|---:|---|---|---|
 | 2–5,000 | 669 | complete | 458f3ff6658ca78a778683552329282018bb29012dd66e9c9355447dbfd2d238 | Development smoke search with Q3/Q4 and rare-hit verification |
