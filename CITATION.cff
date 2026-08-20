@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software or its result data, please cite this repository."
+title: "Lerch prime search and verification"
+type: software
+authors:
+  - family-names: Vranic
+    given-names: Veljko
+version: 0.1.0
+date-released: 2026-08-20
+license: MIT
+abstract: >-
+  Reproducible software, result manifests, and independent verification
+  transcripts for a computational Lerch-prime search, including the candidate
+  p = 42,447,347.

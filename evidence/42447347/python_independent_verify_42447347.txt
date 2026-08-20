@@ -1,0 +1,30 @@
+Independent CPython Lerch verification
+======================================
+
+Candidate: 42447347
+Implementation: CPython 3.14.6 built-in arbitrary-precision integers
+Primality method: independent trial division through sqrt(p)
+Start UTC: 2026-08-19T16:36:27Z
+End UTC: 2026-08-19T16:39:21Z
+Elapsed seconds: 174.37647104263306
+
+Verifier script:
+scripts/independent_verify.py
+
+Verifier script SHA-256:
+3fc7beadc6ca46d0f9d00c0f6b1e320143b2058ba487f439888b7c340779f29d
+
+Output:
+{
+  "p": 42447347,
+  "prime_by_trial_division": true,
+  "implementation": "CPython",
+  "python": "3.14.6",
+  "q1_mod_p": 34227565,
+  "q2_mod_p": 10415263,
+  "q1_minus_wilson_mod_p2": "0",
+  "power_sum_minus_factorial_minus_p_mod_p3": "0",
+  "verified": true,
+  "elapsed_seconds": 174.37647104263306
+}
+

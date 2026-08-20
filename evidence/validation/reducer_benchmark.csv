@@ -1,0 +1,4 @@
+method,seconds,ns_per_multiply
+u128_remainder,0.086285792,8.629
+barrett,0.063548917,6.355
+montgomery_encoded,0.063934084,6.393

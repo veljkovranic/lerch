@@ -1,0 +1,70 @@
+{
+  "version": "lerch-prime-search-v1",
+  "status": "complete",
+  "requested_start": 2,
+  "requested_end": 5000,
+  "completed_intervals": [
+    [
+      2,
+      1001
+    ],
+    [
+      1002,
+      2001
+    ],
+    [
+      2002,
+      3001
+    ],
+    [
+      3002,
+      4001
+    ],
+    [
+      4002,
+      5000
+    ]
+  ],
+  "prime_count": 669,
+  "sum_of_p_processed": "1548136",
+  "lerch_hits": [
+    3,
+    103,
+    839,
+    2237
+  ],
+  "q2_zero_hits": [
+    2,
+    11,
+    971
+  ],
+  "wilson_hits": [
+    5,
+    13,
+    563
+  ],
+  "q1_equals_2_hits": [
+    19,
+    1187
+  ],
+  "q3_zero_hits": [
+    2,
+    17,
+    113,
+    3371
+  ],
+  "q4_zero_hits": [
+    2,
+    17,
+    37,
+    59
+  ],
+  "segment_files": [
+    "segments/segment_00000000.json",
+    "segments/segment_00000001.json",
+    "segments/segment_00000002.json",
+    "segments/segment_00000003.json",
+    "segments/segment_00000004.json"
+  ],
+  "manifest_sha256": "458f3ff6658ca78a778683552329282018bb29012dd66e9c9355447dbfd2d238"
+}

@@ -1,0 +1,17 @@
+{
+  "p": 42447347,
+  "method": "direct q_p definitions plus independent bigint p^3 power sum",
+  "recurrence_q1": 34227565,
+  "recurrence_q2": 10415263,
+  "direct_q1_mod_p": 34227565,
+  "direct_q2_mod_p": 10415263,
+  "direct_q3_mod_p": null,
+  "direct_q4_mod_p": null,
+  "wilson_mod_p": 34227565,
+  "recurrence_matches_direct": true,
+  "q1_matches_wilson_mod_p": true,
+  "q1_minus_wilson_mod_p2": "0",
+  "power_sum_minus_factorial_minus_p_mod_p3": "0",
+  "lerch_verified": true,
+  "verified": true
+}

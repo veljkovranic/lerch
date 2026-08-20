@@ -1,0 +1,9 @@
+/target/
+/results/
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+*.pid
+/search-prime-quotients-500k.log
+/search-prime-quotients-500k.pid

@@ -1,0 +1,54 @@
+Lerch prime candidate clean-build verification
+================================================
+
+Candidate: 42447347
+Host: Apple M1 Pro
+OS: Darwin arm64
+rustc: 1.89.0 (29483883e 2025-06-23)
+Build flags: -C target-cpu=native
+Build directory: fresh mktemp target directory
+Start UTC: 2026-08-19T16:28:45Z
+End UTC: 2026-08-19T16:34:45Z
+
+Source tree SHA-256:
+99f72af88593c3a209a25108af632e8bde7176894908459ccf20cf906164e9d5
+
+Fresh executable SHA-256:
+cd0e9d34a490af2e7871214db23503e04d00520e397ec49aae6210a35e86ef5f
+
+Downloaded manifest SHA-256:
+0ab143e08a3fafb32faba763e5e95a0d03777093dfb34d54c7bbc2f5ed6258ce
+
+Candidate segment:
+segment_00000999.json
+Inclusive interval: 42442867--42452866
+Segment result SHA-256:
+5f8fbce99c813c98fe1a20943d8ec1fd01415c9b868b4344ee207cec297671f0
+
+Command:
+lerch-prime-search verify --prime 42447347
+
+Output:
+{
+  "p": 42447347,
+  "method": "direct q_p definitions plus independent bigint p^3 power sum",
+  "recurrence_q1": 34227565,
+  "recurrence_q2": 10415263,
+  "direct_q1_mod_p": 34227565,
+  "direct_q2_mod_p": 10415263,
+  "direct_q3_mod_p": 25163320,
+  "direct_q4_mod_p": 10214770,
+  "wilson_mod_p": 34227565,
+  "recurrence_matches_direct": true,
+  "q1_matches_wilson_mod_p": true,
+  "q1_minus_wilson_mod_p2": "0",
+  "power_sum_minus_factorial_minus_p_mod_p3": "0",
+  "lerch_verified": true,
+  "verified": true
+}
+
+Conclusion:
+42447347 passes the optimized primitive-root recurrence, the direct
+Fermat-quotient/Wilson computation, and the independent bigint power-sum
+congruence modulo p^3.
+

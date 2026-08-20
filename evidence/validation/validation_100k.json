@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "range": {
+    "start": 3,
+    "end": 99999,
+    "end_exclusive": 100000
+  },
+  "odd_prime_count": 9591,
+  "checks": [
+    "every recurrence q_p(a) equals powmod definition modulo p^2",
+    "Q1, Q2, Q3, and Q4 equal direct aggregates",
+    "Q1 equals independently computed Wilson quotient modulo p",
+    "Lerch remainder equals direct bigint quotient for p <= 300"
+  ],
+  "lerch_hits": [3, 103, 839, 2237],
+  "q2_zero_hits_including_p2": [2, 11, 971],
+  "wilson_hits": [5, 13, 563],
+  "elapsed_seconds": 158.764,
+  "host": "Apple M1 Pro",
+  "rustc": "1.89.0",
+  "transcript": "validation_100k.txt"
+}

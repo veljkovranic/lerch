@@ -1,0 +1,40 @@
+{
+  "version": "lerch-prime-search-v1",
+  "status": "complete",
+  "start": 42442867,
+  "end": 42452866,
+  "configuration_sha256": "99c7bd7193c37aa33a01979c188a35e9d34aa4a7ac541ecc5b6ca85f698ae002",
+  "result_sha256": "5f8fbce99c813c98fe1a20943d8ec1fd01415c9b868b4344ee207cec297671f0",
+  "prime_count": 587,
+  "sum_of_p_processed": "24916909487",
+  "recurrence_steps": "24916908900",
+  "elapsed_seconds": 956.847383193,
+  "lerch_hits": [
+    42447347
+  ],
+  "q2_zero_hits": [],
+  "wilson_hits": [],
+  "q1_equals_2_hits": [],
+  "q3_zero_hits": [],
+  "q4_zero_hits": [],
+  "records": [
+    {
+      "sample": false,
+      "invariants": {
+        "p": 42447347,
+        "primitive_root": 2,
+        "q1": 34227565,
+        "q2": 10415263,
+        "q3": null,
+        "q4": null,
+        "lerch_remainder": 0,
+        "generalized_k": 1,
+        "is_lerch": true,
+        "is_gy_exceptional": false,
+        "is_wilson": false,
+        "q1_equals_2": false
+      },
+      "verification_file": "verifications/p_42447347.json"
+    }
+  ]
+}
