@@ -7,15 +7,44 @@ independently rechecks every rare hit.
 
 ## Computational result
 
-The completed search found the Lerch-prime candidate
+For an odd prime $p$, define the Fermat quotient and Wilson quotient by
+
+$$
+q_p(a)=\frac{a^{p-1}-1}{p},
+\qquad
+W_p=\frac{(p-1)!+1}{p}.
+$$
+
+Lerch's congruence implies that the Lerch quotient
+
+$$
+\ell_p=\frac{\displaystyle\sum_{a=1}^{p-1}q_p(a)-W_p}{p}
+$$
+
+is an integer. A **Lerch prime** is an odd prime $p$ for which
+$p\mid\ell_p$. Equivalently,
+
+$$
+\sum_{a=1}^{p-1}a^{p-1}-(p-1)!-p\equiv0\pmod {p^3}.
+$$
+
+Before this computation, the published literature recorded only four Lerch
+primes: $3$, $103$, $839$, and $2237$. Sondow reported these four through
+$3\times10^6$ in [*Lerch Quotients, Lerch Primes, Fermat-Wilson Quotients,
+and the Wieferich-non-Wilson Primes 2, 3, 14771*](https://arxiv.org/abs/1110.3113),
+and Dobson subsequently listed the same four in
+[*A note on Lerch primes*](https://arxiv.org/abs/1311.2242).
+
+The completed intervals searched by this project found one new value:
 
 $$
 \boxed{p=42{,}447{,}347}.
 $$
 
-The defining congruence was reproduced by the optimized recurrence, a separate
-definition-level Rust verifier using arithmetic modulo $p^2$ and $p^3$, and
-an independent CPython bigint implementation. See
+The project verified that this value is prime and satisfies the defining
+congruence. The result was reproduced by the optimized recurrence, a separate
+definition-level Rust verifier using arithmetic modulo $p^2$ and $p^3$, and an
+independent CPython bigint implementation. See
 "DISCOVERY_42447347.md" and "evidence/42447347/" for the exact residues and
 retained transcripts. External reproduction is invited before the result is
 described as independently verified by another researcher.
@@ -75,30 +104,6 @@ two bigint congruences. The last script performs the explicitly requested
 definition-level comparison for every prime below 100,000; it is deliberately
 not part of the quick default test suite.
 
-## Search and resume
-
-~~~sh
-scripts/search_range.sh 2 100000 --chunk-size 10000 --q3 --q4 --sample-every 25
-scripts/search_range.sh 4496113 18816869 --chunk-size 100000
-~~~
-
-The second command can also be launched as "scripts/search_historical_gap.sh".
-Pass "--threads N" to control parallelism. Chunks have fixed numeric
-boundaries; Rayon schedules them dynamically, which balances the dominant
-work approximately by $\sum p$ while leaving the decomposition reproducible.
-
-Each chunk is written atomically below "results/START-END/segments". A complete
-file includes its exact inclusive interval, prime count, sum of processed
-primes, recurrence-step count, hit lists, configuration SHA-256, and result
-SHA-256. Resume accepts a chunk only when its configuration hash matches.
-The top-level "manifest.json" is the machine-readable record of exactly which
-intervals are complete. Rare-hit verification transcripts live below
-"verifications/"; a chunk is not marked complete if verification fails.
-
-At $O(\sum_{p\le x}p)$, a scan to $10^8$ is a major compute campaign, not
-a sensible single-workstation smoke test. Start with measured chunks, use the
-benchmark command, then assign non-overlapping intervals to machines.
-
 ## Independent verification
 
 ~~~sh
@@ -118,44 +123,6 @@ and
 $$
 \sum_{a=1}^{p-1}a^{p-1}-(p-1)!-p=0\pmod {p^3}.
 $$
-
-## Benchmark and statistics
-
-~~~sh
-scripts/benchmark.sh > BENCHMARK.csv
-scripts/benchmark_reducers.sh > REDUCERS.csv
-scripts/analyze.py results/2-100000
-~~~
-
-The benchmark reports recurrence time and nanoseconds per step. At manageable
-sizes it also times Method A (one modular power modulo $p^2$ per residue) and
-Method B (direct bigint power sum modulo $p^3$) and reports both speedups.
-The reducer benchmark compares u128 remainder, Barrett, and Montgomery kernels
-for one fixed prime; see "IMPLEMENTATION_NOTES.md" before extrapolating it to
-the full recurrence.
-
-Sampling is off by default. "--sample-every N" stores every Nth prime in each
-chunk, including normalized $Q_1,Q_2,L_p,k_p$ inputs. The analysis script
-writes "normalized_samples.csv" and "statistics.json" with a Lerch-residue
-histogram, Pearson chi-square statistic, and $Q_1/Q_2$ correlation.
-
-## File map
-
-- "src/recurrence.rs": optimized constant-memory recurrence.
-- "src/reduction.rs": tested Barrett and Montgomery experiment kernels.
-- "src/reference.rs": slow definition-based implementation.
-- "src/sieve.rs": segmented prime generation.
-- "src/search.rs": parallel chunks, atomic checkpoints, manifests, hit checks.
-- "src/verify.rs": independent rare-hit and bigint Lerch verification.
-- "tests/correctness.rs": cross-method regression/property coverage.
-- "IMPLEMENTATION_NOTES.md": optimization and batch/Kummer notes.
-- "VERIFIED_INTERVALS.md": human-readable ledger of retained completed runs.
-- "REPRODUCING.md": commands for rebuilding, verifying, extracting, and
-  auditing the published evidence.
-- "evidence/": compact manifests and discovery transcripts suitable for
-  direct review in GitHub.
-- "release-assets/": compressed complete result data intended to be attached
-  to a tagged GitHub release.
 
 ## References
 
