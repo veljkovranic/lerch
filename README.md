@@ -9,12 +9,12 @@ independently rechecks every rare hit.
 
 The completed search found the Lerch-prime candidate
 
-\[
+$$
 \boxed{p=42{,}447{,}347}.
-\]
+$$
 
 The defining congruence was reproduced by the optimized recurrence, a separate
-definition-level Rust verifier using arithmetic modulo \(p^2\) and \(p^3\), and
+definition-level Rust verifier using arithmetic modulo $p^2$ and $p^3$, and
 an independent CPython bigint implementation. See
 "DISCOVERY_42447347.md" and "evidence/42447347/" for the exact residues and
 retained transcripts. External reproduction is invited before the result is
@@ -27,35 +27,35 @@ The exact completed intervals and negative results are listed in
 
 ## Mathematical path
 
-For an odd prime \(p\), let
+For an odd prime $p$, let
 
-\[
+$$
 q_p(a)=(a^{p-1}-1)/p,\qquad Q_r=\sum_{a=1}^{p-1}q_p(a)^r\pmod p.
-\]
+$$
 
-If \(g\) is a primitive root and \(c_j=\langle g^j\rangle_p\), write
-\(gc_j=c_{j+1}+k_jp\), and put \(u_j=q_p(c_j)\). With
-\(v_j=c_j^{-1}\), the implementation uses
+If $g$ is a primitive root and $c_j=\langle g^j\rangle_p$, write
+$gc_j=c_{j+1}+k_jp$, and put $u_j=q_p(c_j)$. With
+$v_j=c_j^{-1}$, the implementation uses
 
-\[
+$$
 u_{j+1}=u_j+q_p(g)+k_jv_{j+1}\pmod p.
-\]
+$$
 
-The loop starts with \((c,v,u)=(1,1,0)\), accumulates the current value,
+The loop starts with $(c,v,u)=(1,1,0)$, accumulates the current value,
 then advances. Thus every nonzero residue is counted once. It tests
 
-\[
+$$
 Q_2+Q_1^2-2Q_1=0\pmod p
-\]
+$$
 
-for the Lerch condition, \(Q_2=0\) for Gy exceptions, \(Q_1=0\) for
-Wilson primes, and \(Q_1=2\). Optional \(Q_3,Q_4\) accumulation is enabled
-with the "--q3 --q4" options. When \(Q_2\ne0\), it stores
-\(k_p=1-2L_p/Q_2\pmod p\).
+for the Lerch condition, $Q_2=0$ for Gy exceptions, $Q_1=0$ for
+Wilson primes, and $Q_1=2$. Optional $Q_3,Q_4$ accumulation is enabled
+with the "--q3 --q4" options. When $Q_2\ne0$, it stores
+$k_p=1-2L_p/Q_2\pmod p$.
 
 The optimized path uses u64 values and u128 only in general modular
 multiplication. The accepted search ceiling is 4,000,000,000, which keeps
-\(p^2\), recurrence products, and accumulators inside documented bounds.
+$p^2$, recurrence products, and accumulators inside documented bounds.
 
 ## Build and validate
 
@@ -85,7 +85,7 @@ scripts/search_range.sh 4496113 18816869 --chunk-size 100000
 The second command can also be launched as "scripts/search_historical_gap.sh".
 Pass "--threads N" to control parallelism. Chunks have fixed numeric
 boundaries; Rayon schedules them dynamically, which balances the dominant
-work approximately by \(\sum p\) while leaving the decomposition reproducible.
+work approximately by $\sum p$ while leaving the decomposition reproducible.
 
 Each chunk is written atomically below "results/START-END/segments". A complete
 file includes its exact inclusive interval, prime count, sum of processed
@@ -95,7 +95,7 @@ The top-level "manifest.json" is the machine-readable record of exactly which
 intervals are complete. Rare-hit verification transcripts live below
 "verifications/"; a chunk is not marked complete if verification fails.
 
-At \(O(\sum_{p\le x}p)\), a scan to \(10^8\) is a major compute campaign, not
+At $O(\sum_{p\le x}p)$, a scan to $10^8$ is a major compute campaign, not
 a sensible single-workstation smoke test. Start with measured chunks, use the
 benchmark command, then assign non-overlapping intervals to machines.
 
@@ -106,18 +106,18 @@ target/release/lerch-prime-search verify --prime 2237
 ~~~
 
 The reference path computes every Fermat quotient by a separate exponentiation
-modulo \(p^2\) and computes the Wilson quotient from a factorial modulo \(p^2\).
+modulo $p^2$ and computes the Wilson quotient from a factorial modulo $p^2$.
 For a Lerch candidate, the bigint path additionally verifies
 
-\[
+$$
 Q_1-W_p=0\pmod {p^2}
-\]
+$$
 
 and
 
-\[
+$$
 \sum_{a=1}^{p-1}a^{p-1}-(p-1)!-p=0\pmod {p^3}.
-\]
+$$
 
 ## Benchmark and statistics
 
@@ -128,16 +128,16 @@ scripts/analyze.py results/2-100000
 ~~~
 
 The benchmark reports recurrence time and nanoseconds per step. At manageable
-sizes it also times Method A (one modular power modulo \(p^2\) per residue) and
-Method B (direct bigint power sum modulo \(p^3\)) and reports both speedups.
+sizes it also times Method A (one modular power modulo $p^2$ per residue) and
+Method B (direct bigint power sum modulo $p^3$) and reports both speedups.
 The reducer benchmark compares u128 remainder, Barrett, and Montgomery kernels
 for one fixed prime; see "IMPLEMENTATION_NOTES.md" before extrapolating it to
 the full recurrence.
 
 Sampling is off by default. "--sample-every N" stores every Nth prime in each
-chunk, including normalized \(Q_1,Q_2,L_p,k_p\) inputs. The analysis script
+chunk, including normalized $Q_1,Q_2,L_p,k_p$ inputs. The analysis script
 writes "normalized_samples.csv" and "statistics.json" with a Lerch-residue
-histogram, Pearson chi-square statistic, and \(Q_1/Q_2\) correlation.
+histogram, Pearson chi-square statistic, and $Q_1/Q_2$ correlation.
 
 ## File map
 
