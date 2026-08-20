@@ -29,13 +29,18 @@ $$
 $$
 
 Before this computation, the published literature recorded only four Lerch
-primes: $3$, $103$, $839$, and $2237$. Sondow reported these four through
-$3\times10^6$ in [*Lerch Quotients, Lerch Primes, Fermat-Wilson Quotients,
-and the Wieferich-non-Wilson Primes 2, 3, 14771*](https://arxiv.org/abs/1110.3113),
-and Dobson subsequently listed the same four in
+primes: $3$, $103$, $839$, and $2237$. Sondow reported these four and the
+negative search intervals computed by Marek Wolf in
+[*Lerch Quotients, Lerch Primes, Fermat-Wilson Quotients, and the
+Wieferich-non-Wilson Primes 2, 3, 14771*](https://arxiv.org/abs/1110.3113),
+and Dobson subsequently listed the same four primes in
 [*A note on Lerch primes*](https://arxiv.org/abs/1311.2242).
 
-The completed intervals searched by this project found one new value:
+This project exhaustively tested every prime through $50{,}000{,}000$. It
+reproduced Wolf's negative results with an independent open-source
+implementation and found exactly five Lerch primes in that complete range:
+$3$, $103$, $839$, $2237$, and $42{,}447{,}347$. Consequently, the fifth
+Lerch prime in increasing order is
 
 $$
 \boxed{p=42{,}447{,}347}.

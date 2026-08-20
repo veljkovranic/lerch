@@ -1,0 +1,104 @@
+{
+  "version": "lerch-prime-search-v1",
+  "status": "complete",
+  "requested_start": 18816870,
+  "requested_end": 18977772,
+  "completed_intervals": [
+    [
+      18816870,
+      18826869
+    ],
+    [
+      18826870,
+      18836869
+    ],
+    [
+      18836870,
+      18846869
+    ],
+    [
+      18846870,
+      18856869
+    ],
+    [
+      18856870,
+      18866869
+    ],
+    [
+      18866870,
+      18876869
+    ],
+    [
+      18876870,
+      18886869
+    ],
+    [
+      18886870,
+      18896869
+    ],
+    [
+      18896870,
+      18906869
+    ],
+    [
+      18906870,
+      18916869
+    ],
+    [
+      18916870,
+      18926869
+    ],
+    [
+      18926870,
+      18936869
+    ],
+    [
+      18936870,
+      18946869
+    ],
+    [
+      18946870,
+      18956869
+    ],
+    [
+      18956870,
+      18966869
+    ],
+    [
+      18966870,
+      18976869
+    ],
+    [
+      18976870,
+      18977772
+    ]
+  ],
+  "prime_count": 9599,
+  "sum_of_p_processed": "181393536431",
+  "lerch_hits": [],
+  "q2_zero_hits": [],
+  "wilson_hits": [],
+  "q1_equals_2_hits": [],
+  "q3_zero_hits": [],
+  "q4_zero_hits": [],
+  "segment_files": [
+    "segments/segment_00000000.json",
+    "segments/segment_00000001.json",
+    "segments/segment_00000002.json",
+    "segments/segment_00000003.json",
+    "segments/segment_00000004.json",
+    "segments/segment_00000005.json",
+    "segments/segment_00000006.json",
+    "segments/segment_00000007.json",
+    "segments/segment_00000008.json",
+    "segments/segment_00000009.json",
+    "segments/segment_00000010.json",
+    "segments/segment_00000011.json",
+    "segments/segment_00000012.json",
+    "segments/segment_00000013.json",
+    "segments/segment_00000014.json",
+    "segments/segment_00000015.json",
+    "segments/segment_00000016.json"
+  ],
+  "manifest_sha256": "cfc116fc790a54b7c98c6d0f03832100aa08171c80c2411cb9bdad4e8d210b5e"
+}

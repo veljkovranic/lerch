@@ -5,10 +5,10 @@ type: software
 authors:
   - family-names: Vranic
     given-names: Veljko
-version: 0.1.0
+version: 0.2.0
 date-released: 2026-08-20
 license: MIT
 abstract: >-
-  Reproducible software, result manifests, and independent verification
-  transcripts for a computational Lerch-prime search, including the candidate
-  p = 42,447,347.
+  Reproducible software, complete result manifests through p = 50,000,000,
+  and independent verification transcripts establishing p = 42,447,347 as
+  the fifth Lerch prime.

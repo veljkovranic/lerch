@@ -1,7 +1,7 @@
 # Reproducing the search evidence
 
 This repository separates compact review evidence from the complete raw
-checkpoint data. No result from the ongoing 50,000,000--200,000,000 campaign
+checkpoint data. No result from the separate 50,000,000--200,000,000 campaign
 is included or claimed here.
 
 ## Environment used for the large search
@@ -23,7 +23,7 @@ cargo test --release
 scripts/validate_100k.sh
 ~~~
 
-The quick verification command for the reported candidate is:
+The quick verification command for the reported fifth Lerch prime is:
 
 ~~~sh
 target/release/lerch-prime-search verify --prime 42447347
@@ -66,11 +66,17 @@ transcript, and independently regenerates the primes in every segment with a
 Python segmented sieve:
 
 ~~~sh
-scripts/audit_search_results.py results/smoke_2_5000
+scripts/audit_search_results.py results/2-4496112
 scripts/audit_search_results.py results/4496113-18816869
+scripts/audit_search_results.py results/18816870-18977772
 scripts/audit_search_results.py results/18977773-32452867
 scripts/audit_search_results.py results/32452867-50000000
 ~~~
+
+These five manifests form complete coverage through 50,000,000. Taken
+together at their shared boundaries, they reproduce the three negative
+intervals computed by Marek Wolf and reported in Section 2.3 of
+[Sondow's paper](https://arxiv.org/pdf/1110.3113).
 
 The `manifest_sha256` JSON field is the SHA-256 of the colon-separated ordered
 segment-result hashes. It is an aggregate commitment, not the byte-level hash
@@ -79,7 +85,7 @@ of `manifest.json`. Byte-level file hashes are recorded separately in
 
 ## Discovery evidence
 
-`evidence/42447347/` contains the candidate segment, Rust verification JSON,
+`evidence/42447347/` contains the discovery segment, Rust verification JSON,
 fresh-build transcript, and independent Python transcript. The complete
 manifest is retained under `evidence/manifests/32452867-50000000.json` and is
 also present inside the raw archive.
