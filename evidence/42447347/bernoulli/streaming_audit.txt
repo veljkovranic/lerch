@@ -1,0 +1,6 @@
+numerator_digits=271466759
+numerator_sha256=d662c38e8f7e727a60079f76c9c697abbabfdb6db47ced26d80b69d15ced23d9
+denominator=254684082
+modulus_p_cubed=76480664883425213250923
+p_times_bernoulli_mod_p_cubed=49628251800410944737487
+expected_residue_match=YES

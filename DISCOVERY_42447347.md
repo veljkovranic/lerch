@@ -65,5 +65,32 @@ $$
 \pmod {42{,}447{,}347^3}.
 $$
 
-This residue is a consequence of the independently checked factorial
-congruence; it is not presented as a separate Bernoulli-number computation.
+An additional computation subsequently evaluated the exact reduced fraction
+
+$$
+B_{42{,}447{,}346}=\frac{N}{254{,}684{,}082}
+                   =\frac{N}{6p}
+$$
+
+with FLINT 3.0.1's isolated exact Bernoulli-number implementation. This path
+does not call the Rust search or either factorial verifier. On the 64-core AMD
+EPYC 7702 server it took 1,872.322 seconds using 64 FLINT threads.
+
+The numerator $N$ has exactly 271,466,759 decimal digits. It begins
+
+    80236671537442808117241000110493150791644273149431383747136759740392889493216755
+
+and ends
+
+    67866768163387804379962421936106526547789724809354285213903394943836397376231661
+
+Its SHA-256 is
+
+    d662c38e8f7e727a60079f76c9c697abbabfdb6db47ced26d80b69d15ced23d9
+
+Reducing the exact fraction independently gave the congruence above and
+`expected residue match: YES`. A separate streaming audit then read the saved
+259 MiB numerator back from disk, recomputed its SHA-256 and exact digit count,
+and again obtained the same residue. The compact evidence is in
+`evidence/42447347/bernoulli/`; the full numerator is identified by the hash
+recorded there and is kept outside Git because of its size.

@@ -1,0 +1,13 @@
+{
+  "flint_version": "3.0.1",
+  "prime": 42447347,
+  "bernoulli_index": 42447346,
+  "threads_requested": 64,
+  "elapsed_seconds": 1872.322000,
+  "numerator_digits": 271466760,
+  "denominator_digits": 9,
+  "modulus_p_cubed": "76480664883425213250923",
+  "p_times_bernoulli_mod_p_cubed": "49628251800410944737487",
+  "expected_residue": "49628251800410944737487",
+  "expected_residue_match": true
+}

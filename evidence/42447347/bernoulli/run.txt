@@ -1,0 +1,52 @@
+started_utc=2026-08-20T15:33:05Z
+hostname=bh-lab-c2-1
+uname=Linux bh-lab-c2-1 6.8.0-136-generic #136-Ubuntu SMP PREEMPT_DYNAMIC Wed Jul  1 21:53:05 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+threads_requested=64
+FLINT version: 3.0.1
+prime p: 42447347
+Bernoulli index: 42447346
+estimated digits in |B_n|: 271466756 (upper-bound based; denominator excluded)
+FLINT threads requested: 64
+computing exact B_42447346 with FLINT...
+progress: Bernoulli computation still running; elapsed 60 s
+progress: Bernoulli computation still running; elapsed 120 s
+progress: Bernoulli computation still running; elapsed 180 s
+progress: Bernoulli computation still running; elapsed 240 s
+progress: Bernoulli computation still running; elapsed 300 s
+progress: Bernoulli computation still running; elapsed 360 s
+progress: Bernoulli computation still running; elapsed 420 s
+progress: Bernoulli computation still running; elapsed 480 s
+progress: Bernoulli computation still running; elapsed 540 s
+progress: Bernoulli computation still running; elapsed 600 s
+progress: Bernoulli computation still running; elapsed 660 s
+progress: Bernoulli computation still running; elapsed 720 s
+progress: Bernoulli computation still running; elapsed 780 s
+progress: Bernoulli computation still running; elapsed 840 s
+progress: Bernoulli computation still running; elapsed 900 s
+progress: Bernoulli computation still running; elapsed 960 s
+progress: Bernoulli computation still running; elapsed 1020 s
+progress: Bernoulli computation still running; elapsed 1080 s
+progress: Bernoulli computation still running; elapsed 1140 s
+progress: Bernoulli computation still running; elapsed 1200 s
+progress: Bernoulli computation still running; elapsed 1260 s
+progress: Bernoulli computation still running; elapsed 1320 s
+progress: Bernoulli computation still running; elapsed 1380 s
+progress: Bernoulli computation still running; elapsed 1440 s
+progress: Bernoulli computation still running; elapsed 1500 s
+progress: Bernoulli computation still running; elapsed 1560 s
+progress: Bernoulli computation still running; elapsed 1620 s
+progress: Bernoulli computation still running; elapsed 1680 s
+progress: Bernoulli computation still running; elapsed 1740 s
+progress: Bernoulli computation still running; elapsed 1800 s
+progress: Bernoulli computation still running; elapsed 1860 s
+computation elapsed seconds: 1872.322
+numerator digits: 271466760
+denominator digits: 9
+modulus p^3: 76480664883425213250923
+computed p*B_(p-1) mod p^3: 49628251800410944737487
+expected residue: 49628251800410944737487
+expected residue match: YES
+wrote exact numerator: /home/alt/bernoulli_verify_42447346/bernoulli-output/42447347/B_42447346.numerator.txt
+wrote exact denominator: /home/alt/bernoulli_verify_42447346/bernoulli-output/42447347/B_42447346.denominator.txt
+wrote summary: /home/alt/bernoulli_verify_42447346/bernoulli-output/42447347/B_42447346.summary.json
+finished_utc=2026-08-20T16:06:06Z
