@@ -48,8 +48,9 @@ $$
 
 The project verified that this value is prime and satisfies the defining
 congruence. The result was reproduced by the optimized recurrence, a separate
-definition-level Rust verifier using arithmetic modulo $p^2$ and $p^3$, and an
-independent CPython bigint implementation. See
+definition-level Rust verifier using arithmetic modulo $p^2$ and $p^3$, an
+independent CPython bigint implementation, and an exact 271,466,759-digit
+Bernoulli-number computation using FLINT. See
 "DISCOVERY_42447347.md" and "evidence/42447347/" for the exact residues and
 retained transcripts. External reproduction is invited before the result is
 described as independently verified by another researcher.
