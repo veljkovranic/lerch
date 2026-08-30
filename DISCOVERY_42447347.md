@@ -1,6 +1,6 @@
 # Fifth Lerch prime: 42,447,347
 
-The exhaustive search of every prime through 50,000,000 found exactly five
+The exhaustive search of every prime through 200,000,000 found exactly five
 Lerch primes: 3, 103, 839, 2237, and 42,447,347. Thus the fifth Lerch prime in
 increasing order is
 

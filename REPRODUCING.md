@@ -1,8 +1,8 @@
 # Reproducing the search evidence
 
 This repository separates compact review evidence from the complete raw
-checkpoint data. No result from the separate 50,000,000--200,000,000 campaign
-is included or claimed here.
+checkpoint data. The published archives and manifests cover every prime
+through 200,000,000.
 
 ## Environment used for the large search
 
@@ -108,6 +108,8 @@ Install `zstd`, then run:
 ~~~sh
 zstd -dc release-assets/completed-search-results-through-50000000.tar.zst |
   tar -xf -
+zstd -dc release-assets/completed-search-results-50000000-200000000.tar.zst |
+  tar -xf -
 ~~~
 
 This creates `results/` with every original segment, manifest, rare-hit
@@ -134,9 +136,10 @@ scripts/audit_search_results.py results/4496113-18816869
 scripts/audit_search_results.py results/18816870-18977772
 scripts/audit_search_results.py results/18977773-32452867
 scripts/audit_search_results.py results/32452867-50000000
+scripts/audit_search_results.py results/50000000-200000000
 ~~~
 
-These five manifests form complete coverage through 50,000,000. Taken
+These six manifests form complete coverage through 200,000,000. Taken
 together at their shared boundaries, they reproduce the three negative
 intervals computed by Marek Wolf and reported in Section 2.3 of
 [Sondow's paper](https://arxiv.org/pdf/1110.3113).
@@ -149,6 +152,8 @@ of `manifest.json`. Byte-level file hashes are recorded separately in
 ## Discovery evidence
 
 `evidence/42447347/` contains the discovery segment, Rust verification JSON,
-fresh-build transcript, and independent Python transcript. The complete
-manifest is retained under `evidence/manifests/32452867-50000000.json` and is
-also present inside the raw archive.
+fresh-build transcript, and independent Python transcript. The discovery
+manifest is retained under `evidence/manifests/32452867-50000000.json`. The
+later negative-search manifest is retained under
+`evidence/manifests/50000000-200000000.json`. Both are also present inside
+their corresponding raw archives.

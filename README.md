@@ -36,7 +36,7 @@ Wieferich-non-Wilson Primes 2, 3, 14771*](https://arxiv.org/abs/1110.3113),
 and Dobson subsequently listed the same four primes in
 [*A note on Lerch primes*](https://arxiv.org/abs/1311.2242).
 
-This project exhaustively tested every prime through $50{,}000{,}000$. It
+This project exhaustively tested every prime through $200{,}000{,}000$. It
 reproduced Wolf's negative results with an independent open-source
 implementation and found exactly five Lerch primes in that complete range:
 $3$, $103$, $839$, $2237$, and $42{,}447{,}347$. Consequently, the fifth
@@ -56,9 +56,10 @@ retained transcripts. External reproduction is invited before the result is
 described as independently verified by another researcher.
 
 The exact completed intervals and negative results are listed in
-"VERIFIED_INTERVALS.md". Full raw segment data is stored as the compact archive
-"release-assets/completed-search-results-through-50000000.tar.zst"; see
-"REPRODUCING.md" for extraction and audit commands.
+"VERIFIED_INTERVALS.md". Full raw segment data is stored in the two compact
+archives under "release-assets/", covering the ranges through $50{,}000{,}000$
+and from $50{,}000{,}000$ through $200{,}000{,}000$; see "REPRODUCING.md" for
+extraction and audit commands.
 
 ## Mathematical path
 

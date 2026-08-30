@@ -2,7 +2,7 @@
 
 This ledger contains only completed runs whose machine-readable manifest is
 retained. Together, the production runs cover every prime through
-$50{,}000{,}000$.
+$200{,}000{,}000$.
 
 For research claims, treat "manifest.json" as authoritative and archive it
 with the source revision, compiler version, CPU information, and verification
@@ -44,10 +44,11 @@ $18{,}977{,}772$ reproduces the interior of his second exclusion, whose
 endpoints were already covered by the neighboring runs. The final production
 run includes all of Wolf's third exclusion.
 
-Thus the apparently irregular rounds now form one complete chain from $2$
-through $50{,}000{,}000$, reproduce all three results attributed to Wolf, and
-remove any dependence on the earlier computation for the claim below. The
-shared boundary at $32{,}452{,}867$ was tested twice and is intentional.
+Thus the apparently irregular rounds, followed by the later extension, now
+form one complete chain from $2$ through $200{,}000{,}000$, reproduce all three
+results attributed to Wolf, and remove any dependence on the earlier
+computation for the claim below. The shared boundaries at $32{,}452{,}867$ and
+$50{,}000{,}000$ are intentional.
 
 | Inclusive interval | Primes | Status | Manifest aggregate SHA-256 | Purpose |
 |---|---:|---|---|---|
@@ -56,14 +57,15 @@ shared boundary at $32{,}452{,}867$ was tested twice and is intentional.
 | 18,816,870–18,977,772 | 9,599 | complete | cfc116fc790a54b7c98c6d0f03832100aa08171c80c2411cb9bdad4e8d210b5e | Reproduced the interior of Wolf's second exclusion; no Lerch hits |
 | 18,977,773–32,452,867 | 790,302 | complete | e95d8a0be5fe8353eb5f42758f22a6337750f5c1782f7f15d65154d248d24e74 | Second historical gap; no Lerch hits |
 | 32,452,867–50,000,000 | 1,001,134 | complete | 0ab143e08a3fafb32faba763e5e95a0d03777093dfb34d54c7bbc2f5ed6258ce | Reproduced Wolf's third exclusion, then found and verified Lerch prime 42,447,347 |
+| 50,000,000–200,000,000 | 8,077,803 | complete | 769b0244a0bcb6027ad737dcc81b69bad3f876ee865a19f4ab0fe620afd0add3 | Extended the exhaustive search; no Lerch hits |
 
 The complete chain contains exactly the Lerch hits
 $3,103,839,2237,42{,}447{,}347$. It therefore establishes
 $42{,}447{,}347$ as the fifth Lerch prime in increasing order.
 
-Compact copies of all five production manifests, plus the earlier development
+Compact copies of all six production manifests, plus the earlier development
 smoke manifest, are under "evidence/manifests/". The complete result trees are
-in the release archive. Separately, the definition-level validation covered
+in the release archives. Separately, the definition-level validation covered
 all 9,591 odd primes below 100,000; its transcript is
 "evidence/validation/validation_100k.txt". That validation is not listed as a
 production search interval because it did not emit a search manifest.
